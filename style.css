@@ -1,0 +1,27 @@
+.cards{
+    display: flex;
+    justify-content: center;
+    margin-top: 5em;
+    gap: 4em;
+    flex-wrap: wrap;
+}
+
+.card{
+    width: 20rem !important;
+
+}
+.navbar-brand{
+color: white;
+font-size: 30px;
+font-family: 'Lemonada', cursive;
+}
+.nav-link{
+    font-size: 20px;
+    font-family: 'Lemonada',  cursive;
+    
+}
+.card img{
+    width: auto;
+    height: 300px;
+
+}
