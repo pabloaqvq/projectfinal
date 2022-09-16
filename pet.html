@@ -5,102 +5,46 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>pet</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css
-    ">
+  <title>ChiquiPeludos</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Smooch&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
 </head>
-
 <body>
+  <header>
+    <div class="px-3  text-bg-dark header-container" >
+      <div class="titulo"> <h1 id="titulo" class="titulo">PetShoP</h1></div>
+      <div class="carrito"><button type="button" class="btn" id="btn-car"><i class="bi bi-cart2"></i></button></div>
+    </div>
+  </header>
+  
 
-  <nav class="navbar navbar-expand-lg">
-    <a class="navbar-brand" href="#">ChiquiPeludos</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Contacto<span class="sr-only"></span></a>
-        </li>
-      </ul>
-    </div>
-  </nav>
-<main class="cards" id="cards">
 
-</main>
-  <!-- <div class="cards">
-    <div class="card">
-      <img class="card-img-top" src="./imgs/premium-adulto-vital-can-15-kg.jpg" alt="img.vital">
-      <div class="card-body">
-        <h5 class="card-title">Vital Premium</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-        <a href="#" class="btn btn-primary">Comprar</a>
-      </div>
-    </div>
-    <div class="card">
-      <img class="card-img-top" src="./imgs/dogui-cachorros.jpg" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Dogui</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-        <a href="#" class="btn btn-primary">Comprar</a>
-      </div>
-    </div>
-    <div class="card">
-      <img class="card-img-top" src="./imgs/D_NQ_NP_708390-MLA44830126840_022021-O.jpg" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Royal Eukanuba</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-        <a href="#" class="btn btn-primary">Comprar</a>
-      </div>
-    </div>
-    <div class="card">
-      <img class="card-img-top" src="..." alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-        <a href="#" class="btn btn-primary">Comprar</a>
-      </div>
-    </div>
-    <div class="card">
-      <img class="card-img-top" src="..." alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-        <a href="#" class="btn btn-primary">Comprar</a>
-      </div>
-    </div>
-    <div class="card">
-      <img class="card-img-top" src="..." alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-        <a href="#" class="btn btn-primary">Comprar</a>
-      </div>
-    </div>
-    <div class="card">
-      <img class="card-img-top" src="..." alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-          content.</p>
-        <a href="#" class="btn btn-primary">Comprar</a>
+  <main class="cards" id="cards">
+    <!-- cards js -->
+  </main>
+  
+  <div class="modal d-none modals" id="modalSheet" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="staticBackdropLabel">Carrito</h5>
+          <button type="button" class="btn-close" id="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="carrito-contenedor">
+            <div class="prodEnCarrito"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Comprar</button>
+          <button type="button" class="btn btn-danger">Vaciar</button>
+        </div>
       </div>
     </div>
   </div>
-   -->
-
-
 </body>
 <script src="./pet.js"></script>
 
