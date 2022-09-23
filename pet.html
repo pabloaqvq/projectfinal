@@ -16,7 +16,7 @@
   <header>
     <div class="px-3  text-bg-dark header-container" >
       <div class="titulo"> <h1 id="titulo" class="titulo">PetShoP</h1></div>
-      <div class="carrito"><button type="button" class="btn" id="btn-car"><i class="bi bi-cart2"></i></button></div>
+      <div class="carrito"><button type="button" class="btn" id="btn-car"><i class="bi bi-cart2"></i><span id="cont-car">0</span></button></div>
     </div>
   </header>
   
@@ -48,7 +48,7 @@
             </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Comprar</button>
+          <p class="precioProducto">Precio total: $<span id="precioTotal">0</span></p>
           <button type="button" id="vaciar-carrito" class="btn btn-danger">Vaciar</button>
         </div>
       </div>

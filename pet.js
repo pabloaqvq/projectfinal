@@ -2,14 +2,22 @@
 const contenedorProd = document.getElementById("cards")
 const contenedorCarrito = document.getElementById("carrito-contenedor")
 const vaciarCarro = document.getElementById("vaciar-carrito")
-
+const contador = document.getElementById("cont-car")
+const precioTotal = document.getElementById('precioTotal')
 let carritoCompras = [];
 
+document.addEventListener('DOMContentLoaded', () =>{ 
+    if (localStorage.getItem('carritoCompras')){
+        carritoCompras = JSON.parse(localStorage.getItem('carritoCompras'))
+        leerCarrito()
+    }
+})
 
-vaciarCarro.addEventListener('click',() =>{
-    carritoCompras.length = 0;   
+//button vaciar
+vaciarCarro.addEventListener('click', () => {
+    carritoCompras.length = 0;
     leerCarrito();
-   })
+})
 
 
 //inyect card al dom
@@ -49,19 +57,28 @@ document.getElementById("btn-car").addEventListener("click", () => {
 
 //func agregar al carrito
 const agregarAlCarro = (agregarId) => {
-    const item = listaProductos.find((agregar) => agregar.id === agregarId)
-    carritoCompras.push(item)
-    leerCarrito()
-}
+    const exist = carritoCompras.some(prod => prod.id === agregarId)
+    if(exist){
+        const prod = carritoCompras.map(prod => {
+            if (prod.id === agregarId){
+                prod.cantidad++
+            }
+        })
+    } else{
 
+    const item = listaProductos.find((agregar) => agregar.id === agregarId)
+    carritoCompras.push(item)  
+}
+leerCarrito()
+}
 
 //delete carrito
 const eliminarCarrito = (prodId) => {
     const item = carritoCompras.find((prod) => prod.id === prodId)
     const indice = carritoCompras.indexOf(item)
-    carritoCompras.splice (indice,1)
+    carritoCompras.splice(indice, 1)
     leerCarrito()
-}      
+}
 //func leer el carrito
 const leerCarrito = () => {
     contenedorCarrito.innerHTML = ""
@@ -69,12 +86,15 @@ const leerCarrito = () => {
     carritoCompras.forEach((prod) => {
         const div = document.createElement('tr')
         div.className = ("prodEnCarrito")
-        div.innerHTML=`
+        div.innerHTML = `
         <td><b>${prod.nombre}</b></td>
         <td>$${prod.precio}</td>
         <td>Cantidad: <span id=cantidad>${prod.cantidad}</span></td>
         <button onclick="eliminarCarrito(${prod.id})" class="btn btn-danger"><i class="bi bi-trash"></i></button>`
         contenedorCarrito.appendChild(div)
+        localStorage.setItem('carritoCompras', JSON.stringify(carritoCompras))
     })
+    contador.innerText = carritoCompras.length
+    precioTotal.innerText = carritoCompras.reduce((acum, prod) => acum + prod.precio, 0)
 }
 
