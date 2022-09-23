@@ -1,6 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -34,18 +33,28 @@
           <h3 class="modal-title" id="staticBackdropLabel">Carrito</h5>
           <button type="button" class="btn-close" id="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
+        <div class="modal-body" id="main-cont">
+          <table class="tabla">
+            <thead>
+              <tr>
+              <th>Nombre</th>
+              <th>Precio</th>
+              <th>Cantidad</th>
+            </tr>
+            </thead>
+          </table>
           <div id="carrito-contenedor">
-            <div class="prodEnCarrito"></div>
+            <div class="prodEnCarrito">
+            </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Comprar</button>
-          <button type="button" class="btn btn-danger">Vaciar</button>
+          <button type="button" id="vaciar-carrito" class="btn btn-danger">Vaciar</button>
         </div>
       </div>
     </div>
   </div>
 </body>
+<script src="./petlist.js"></script>
 <script src="./pet.js"></script>
-
 </html>

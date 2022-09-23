@@ -45,3 +45,14 @@
     background-color: rgba(0, 0, 0, 0.5);
 
 }
+
+#main-cont{
+margin: 5px auto;
+}
+.tabla{
+    width: 100%;
+    text-align: left;
+}
+.prodEnCarrito{
+    margin: 5px auto;
+}
