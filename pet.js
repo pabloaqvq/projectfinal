@@ -36,6 +36,13 @@ listaProductos.forEach((producto) => {
     const boton = document.getElementById(`agregar${producto.id}`)
     boton.addEventListener('click', () => {
         agregarAlCarro(producto.id)
+        Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Agregado al carrito',
+            showConfirmButton: false,
+            timer: 1000
+        })
     })
 })
 
